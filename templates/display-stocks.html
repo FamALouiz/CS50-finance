@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Display your stocks
+{% endblock %}
+{% block main %}
+    <div class="mb-3">
+        <h1>
+            <b>Welcome!</b>
+        </h1>
+    </div>
+    <div class="mb-3">
+        <table class = "styled-table">
+            <th>List number</th>
+            <th>Stock symbol</th>
+            <th>Shares</th>
+            <th>Current Price per Shares </th>
+            <th>Total Value</th>
+            {% for i in range(len) %}
+                <tr>
+                    <td> {{ i + 1 }} </td>
+                    <td> {{ stocks[i]["stock_symbol"] }} </td>
+                    <td> {{ stocks[i]["shares"] }} </td>
+                    <td> {{ prices[i] }}</td>
+                    <td> {{ total[i] }} </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>
+                    <b>
+                        TOTAL
+                    </b>
+                </td>
+                <td>
+                    {{ final }}
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

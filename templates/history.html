@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+{% block main %}
+    <div class="mb-3">
+        <h1>
+            <b>Your Stock history</b>
+        </h1>
+    </div>
+    <div class="mb-3">
+        <table class = "styled-table">
+            <th>Action number</th>
+            <th>Stock symbol</th>
+            <th>Shares</th>
+            <th>Buy/Sell Price per Shares </th>
+            <th>Total Value</th>
+            {% for i in range(len) %}
+                <tr>
+                    <td> {{ i + 1 }} </td>
+                    <td> {{ stocks[i]["stock_symbol"] }} </td>
+                    <td> {{ stocks[i]["shares"] }} </td>
+                    {% if stocks[i]["buy_price"] < 0 %}
+                        <td class="red"> {{ prices[i] }}</td>
+                        <td class="red"> {{ total[i]  }} </td>
+                    {% else %}
+                        <td class="green"> {{ prices[i] }}</td>
+                        <td class="green"> {{ total[i] }} </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="mb-3">
+        <h1>
+            <b>Your Deposit history</b>
+        </h1>
+    </div>
+    <div class="mb-3">
+        <table class = "styled-table">
+            <th>Deposit number</th>
+            <th>Amount</th>
+            {% for i in range(len2) %}
+                <tr>
+                    <td> {{ i + 1 }} </td>
+                    <td class="green"> {{ cash[i] }}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

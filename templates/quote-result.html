@@ -1,0 +1,18 @@
+{% extends "quote.html" %}
+
+{% block quote_results %}
+    <div class="mb-3">
+        <table class = "styled-table">
+            <th>
+                Name
+            </th>
+            <th>
+                Pirce
+            </th>
+            <tr>
+                <td>{{ result["name"] }}</td>
+                <td>{{ amount }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

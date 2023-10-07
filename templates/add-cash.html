@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote a stock
+{% endblock %}
+
+{% block main %}
+    <form action = "/add-cash" method = "post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="amount" name="amount" placeholder="Amount of cash you want to add in dollars" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+    <div>
+        {% block quote_results %}{% endblock %}
+    </div>
+{% endblock %}
